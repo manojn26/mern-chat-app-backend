@@ -1,12 +1,15 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const data = require("./data");
+const cors = require("cors");
 
 dotenv.config();
 
 const app = express();
+app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("Hello From Server").status(200);
+  res.json(data).status(200);
 });
 
 const PORT = process.env.PORT || 5000;
