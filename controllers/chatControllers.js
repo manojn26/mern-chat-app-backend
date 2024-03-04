@@ -11,7 +11,6 @@ const accessChat = asyncHandler(async (req, res) => {
   }
 
   const userData = await User.findOne({ _id: userId });
-  console.log("New Chat Id", userData);
 
   let isChat = await Chat.find({
     isGroupChat: false,
