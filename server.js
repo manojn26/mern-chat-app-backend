@@ -35,7 +35,8 @@ const server = app.listen(PORT, () => {
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "https://you-and-me-chats.netlify.app/",
+    origin: "*",
+    methods: ["GET", "POST"],
   },
 });
 
